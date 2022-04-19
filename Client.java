@@ -4,7 +4,7 @@
  */
 import Modals.*;
 
-public class Main {
+public class Client {
 
     public static void main(String[] args) throws Exception {
         ParkingLot parkingLot = new ParkingLot(10, 10, 5);
