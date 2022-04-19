@@ -3,6 +3,7 @@ package Modals;
 import java.util.Date;
 import java.util.HashMap;
 
+import ParkingExceptions.ParkingFullException;
 import ParkingExceptions.VehicleNotParkedException;
 import ParkingExceptions.WrongParkingTypeException;
 import ParkingExceptions.WrongUnparkingException;
@@ -71,19 +72,25 @@ public class ParkingLot {
             throw new WrongParkingTypeException(parkingSpot);
     }
 
-    public void parkVehicle(final Vehicle vehicle) throws WrongVehicleTypeExceptions {
+    public void parkVehicle(final Vehicle vehicle) throws WrongVehicleTypeExceptions, ParkingFullException {
         String type = vehicle.getVehicleType();
         ParkingSpot parkingSpot = null;
 
         if (type.equalsIgnoreCase("Car")) {
+            if (this.carsParked == this.MaxCarParkingSpots)
+                throw new ParkingFullException(vehicle.getVehicleType());
             carParkingSpotArray[this.carsParked] = new CarParkingSpot();
             parkingSpot = carParkingSpotArray[this.carsParked];
             carParkingSpots.put(vehicle.getLicencePlateNumber(), new Pair(this.carsParked++, new Date()));
         } else if (type.equalsIgnoreCase("Bike")) {
+            if (this.bikesParked == this.MAXBikeParkingSpots)
+                throw new ParkingFullException(vehicle.getVehicleType());
             bikeParkingSpotArray[this.bikesParked] = new BikeParkingSpot();
             parkingSpot = bikeParkingSpotArray[this.bikesParked];
             bikeParkingSpots.put(vehicle.getLicencePlateNumber(), new Pair(this.bikesParked++, new Date()));
         } else if (type.equalsIgnoreCase("Truck")) {
+            if (this.trucksParked == this.MAXTruckParkingSpots)
+                throw new ParkingFullException(vehicle.getVehicleType());
             truckParkingSpotArray[this.trucksParked] = new TruckParkingSpot();
             parkingSpot = truckParkingSpotArray[this.trucksParked];
             truckParkingSpots.put(vehicle.getLicencePlateNumber(), new Pair(this.trucksParked++, new Date()));

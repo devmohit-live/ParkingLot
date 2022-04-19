@@ -3,9 +3,9 @@ package ParkingExceptions;
 import Modals.ParkingSpot;
 
 public class ParkingFullException extends Exception {
-    private static final String messString = ": is Full. Can't park more.";
+    private static final String messString = ": parking spots are Full. Can't park more.";
 
-    public ParkingFullException(ParkingSpot parkingSpot) {
-        super(parkingSpot.getParkingType() + messString);
+    public ParkingFullException(String parkingType) {
+        super(parkingType + messString);
     }
 }

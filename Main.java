@@ -38,6 +38,20 @@ public class Main {
         System.out.println("Unpark car 2 " + parkingLot.unParkAVehicleAndGetFare(car2));
         System.out.println("Car parking now : " + parkingLot.noOfParkingsLeft(car2));
         System.out.println("Unparking Bike " + parkingLot.unParkAVehicleAndGetFare(bike));
+        Truck t1 = new Truck(0000);
+        Truck t2 = new Truck(1111);
+        Truck t3 = new Truck(2222);
+        Truck t4 = new Truck(3333);
+        Truck t5 = new Truck(4444);
+        parkingLot.parkVehicle(t1);
+        parkingLot.parkVehicle(t2);
+        parkingLot.parkVehicle(t3);
+        parkingLot.parkVehicle(t4);
+        parkingLot.parkVehicle(t5);
 
+        // Exceeding the limit
+        // Truck t6 = new Truck(5555);
+        // parkingLot.parkVehicle(t6);
+     
     }
 }
