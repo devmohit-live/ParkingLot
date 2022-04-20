@@ -9,7 +9,7 @@ public class Client {
     public static void main(String[] args) throws Exception {
         ParkingLot parkingLot = new ParkingLot(10, 10, 5);
         Car car = new Car(123);
-        Vehicle car2 = new Car(456);
+        VehicleClass car2 = new Car(456);
         Bike bike = new Bike(789);
         Truck truck = new Truck(101112);
 

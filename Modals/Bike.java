@@ -1,5 +1,5 @@
 package Modals;
-public class Bike extends Vehicle {
+public class Bike extends VehicleClass {
     private static final String type = "BIKE";
     private static final int ratePerHours = 10;
     private long licencePlateNumber;

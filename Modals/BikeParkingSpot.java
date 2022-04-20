@@ -1,6 +1,6 @@
 package Modals;
 
-public class BikeParkingSpot extends ParkingSpot {
+public class BikeParkingSpot extends ParkingSpotClass {
     private static final String parkingType = "Bike Parking";
     private static final int ratePerHour = 10;
 
